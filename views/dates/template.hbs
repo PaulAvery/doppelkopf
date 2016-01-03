@@ -1,0 +1,77 @@
+<header class="jumbotron">
+	<div class="container">
+		<h1>Dates</h1>
+	</div>
+</header>
+<div id="{{layout.path}}" class="container">
+	<div class="table-responsive">
+	<table class="table table-hover table-bordered table-striped">
+		<thead>
+			<tr>
+				<th></th>
+				{{#each players}}
+				<th colspan="3"><a href="{{../layout/basepath}}/users/{{url this}}">{{this}}</a></th>
+				{{/each}}
+				<th></th>
+				{{#if layout.user.admin}}
+				<th></th>
+				{{/if}}
+			</tr>
+			<tr>
+				<th>Units</th>
+				{{#each sums}}
+				<th>Position</th>
+				<th>Points</th>
+				<th>€</th>
+				{{/each}}
+				<th>Sum (€)</th>
+				{{#if layout.user.admin}}
+				<th></th>
+				{{/if}}
+			</tr>
+			<tr>
+				<th>Totals</th>
+				{{#each sums}}
+				<th>{{position}}</th>
+				<th>{{points}}</th>
+				<th>{{money}}</th>
+				{{/each}}
+				<th>{{sum}}</th>
+				{{#if layout.user.admin}}
+				<th></th>
+				{{/if}}
+			</tr>
+		</thead>
+		<tbody>
+			{{#each dates}}
+			<tr>
+				<td><a href="{{../layout/basepath}}/dates/{{id}}">{{date date}}</a></td>
+				{{#each results}}
+					{{#if this}}
+					<td>{{position}}</td>
+					<td>{{points}}</td>
+					<td>{{money}}</td>
+					{{else}}
+					<td colspan="3" style="text-align: center;">-</td>
+					{{/if}}
+				{{/each}}
+				<td>{{sum}}</td>
+				{{#if ../layout/user/admin}}
+				<td><a href="{{../../layout/basepath}}/removeDate/{{id}}" class="btn btn-danger">Delete</a></td>
+				{{/if}}
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	</div>
+	<div class="row">
+		<div class="col-sm-6">
+			<h3>Points:</h3>
+			{{{pie piePoints 350}}}
+		</div>
+		<div class="col-sm-6">
+			<h3>Money:</h3>
+			{{{pie pieMoney 350}}}
+		</div>
+	</div>
+</div>

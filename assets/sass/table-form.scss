@@ -1,0 +1,18 @@
+.form-group table {
+	margin-bottom: 0px;
+}
+
+.form-td {
+	padding: 0px !important;
+}
+
+.form-td > input {
+	border: 0px;
+	width: 100%;
+	padding: 8px;
+	box-shadow: none !important;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > .form-td > input {
+	background-color: #f9f9f9;
+}

@@ -1,0 +1,27 @@
+<header class="jumbotron">
+	<div class="container">
+		<h1>Users</h1>
+	</div>
+</header>
+<div id="{{layout.path}}" class="container">
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Total Points</th>
+				<th>Average Position</th>
+				<th>Money Spent</th>
+			</tr>
+		</thead>
+		<tbody>
+		{{#each users}}
+			<tr>
+				<td><a href="{{../layout/basepath}}/users/{{url name}}">{{name}}</a></td>
+				<td>{{points}}</td>
+				<td>{{position}}</td>
+				<td>{{money}}€</td>
+			</tr>
+		{{/each}}
+		</tbody>
+	</table>
+</div>

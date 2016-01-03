@@ -1,0 +1,45 @@
+<header class="jumbotron">
+	<div class="container">
+		<h1>Date ({{date date}})</h1>
+	</div>
+</header>
+<div id="{{layout.path}}" class="container">
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>Player</th>
+				<th>Position</th>
+				<th>Points</th>
+				<th>Money</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each users}}
+			<tr>
+				<td><a href="{{../layout/basepath}}/users/{{url name}}">{{name}}</a></td>
+				<td>{{position}}</td>
+				<td>{{points}}</td>
+				<td>{{money}}€</td>
+			</tr>
+			{{/each}}
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>Totals</td>
+				<td></td>
+				<td>{{points}}</td>
+				<td>{{money}}€</td>
+			</tr>
+		</tfoot>
+	</table>
+	<div class="row">
+		<div class="col-sm-6">
+			<h3>Points:</h3>
+			{{{pie piePoints 350}}}
+		</div>
+		<div class="col-sm-6">
+			<h3>Money:</h3>
+			{{{pie pieMoney 350}}}
+		</div>
+	</div>
+</div>

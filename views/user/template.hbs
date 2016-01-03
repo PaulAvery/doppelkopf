@@ -1,0 +1,35 @@
+<header class="jumbotron">
+	<div class="container">
+		<h1>{{name}}</h1>
+	</div>
+</header>
+<div id="{{layout.path}}" class="container">
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>Position</th>
+				<th>Points</th>
+				<th>Money</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each dates}}
+			<tr>
+				<td><a href="{{../layout/basepath}}/dates/{{id}}">{{date date}}</a></td>
+				<td>{{position}}</td>
+				<td>{{points}}</td>
+				<td>{{money}}€</td>
+			</tr>
+			{{/each}}
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>Totals</td>
+				<td>{{position}} (avg.)</td>
+				<td>{{points}}</td>
+				<td>{{money}}€</td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
